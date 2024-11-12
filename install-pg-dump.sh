@@ -8,11 +8,6 @@ if [[ -z "$POSTGRES_VERSION" ]]; then
   exit 1
 fi
 
-if [[ "$POSTGRES_VERSION" != @(11|12|13|14) ]]; then
-  echo "POSTGRES_VERSION must be one of 11, 12, 13, 14"
-  exit 1
-fi
-
 cat <<EOF > /etc/yum.repos.d/pgdg.repo
 [pgdg$POSTGRES_VERSION]
 name=PostgreSQL $POSTGRES_VERSION for RHEL/CentOS 7 - x86_64
